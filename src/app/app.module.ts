@@ -1,5 +1,7 @@
 import { BrowserModule , Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AuthModule } from './auth/auth.module';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { AuthService } from './auth/auth.service';
+//import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './pages/callback/callback.component';
 
 @NgModule({
@@ -20,11 +22,12 @@ import { CallbackComponent } from './pages/callback/callback.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    AuthModule.forRoot()
   ],
   providers: [
-    Title, 
-    AuthService
+    Title//, 
+    //AuthService
   ],
   bootstrap: [AppComponent]
 })
