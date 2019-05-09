@@ -27,6 +27,16 @@ module.exports = function(app, config) {
     issuer: `https://${config.AUTH0_DOMAIN}/`,
     algorithm: 'RS256'
   });
+  
+  // Check for an authenticated admin user
+  const adminCheck = (req, res, next) => {
+    const roles = req.user[config.NAMESPACE] || [];
+    if (roles.indexOf('admin') > -1) {
+      next();
+    } else {
+      res.status(401).send({message: 'Not authorized for admin access'});
+    }
+  }
 
 /*
  |--------------------------------------
