@@ -1,3 +1,3 @@
-# HerokuQuickStart
+# NFL Pickem
 
-Testing changes for branch commit. 
+Pickem manager for work pool. 
