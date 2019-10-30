@@ -9,8 +9,20 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { FormsModule } from '@angular/forms';
+
+import { HttpModule } from '@angular/http';
+import { HttpClientModule }    from '@angular/common/http';
+
+import { AuthService } from './auth/auth.service';
+import { DatePipe } from '@angular/common';
+import { ApiService } from './core/services/api.service';
+import { UtilsService } from './core/services/utils.service';
+import { FilterSortService } from './core/services/filter-sort.service';
+
 //import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './pages/callback/callback.component';
+import { ParticipantsComponent } from './pages/participants/participants.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +30,24 @@ import { CallbackComponent } from './pages/callback/callback.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    CallbackComponent
+    CallbackComponent,
+    ParticipantsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    AuthModule.forRoot()
+    AuthModule.forRoot(), 
+    FormsModule,
+    HttpModule,
+    HttpClientModule
   ],
   providers: [
-    Title//, 
-    //AuthService
+    Title,
+    AuthService, 
+    DatePipe, 
+    ApiService,
+    UtilsService, 
+    FilterSortService
   ],
   bootstrap: [AppComponent]
 })
