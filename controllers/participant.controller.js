@@ -4,10 +4,10 @@ const request = require('request');
 const ObjectId = require('mongoose').Types.ObjectId;
 
 
-const Participant = require('./../models/particpant');
+const Participant = require('./../models/participant');
 const BaseController = require('./base.controller');
 
-class PartcipantController extends BaseController {
+class ParticipantController extends BaseController {
 
   constructor() {
     super(Participant, 'participants');

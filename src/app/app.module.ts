@@ -23,6 +23,7 @@ import { FilterSortService } from './core/services/filter-sort.service';
 //import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { ParticipantsComponent } from './pages/participants/participants.component';
+import { ParticipantComponent } from './pages/participants/participant/participant.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ParticipantsComponent } from './pages/participants/participants.compone
     HeaderComponent,
     FooterComponent,
     CallbackComponent,
-    ParticipantsComponent
+    ParticipantsComponent,
+    ParticipantComponent
   ],
   imports: [
     BrowserModule,
