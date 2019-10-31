@@ -5,6 +5,8 @@ import { CallbackComponent } from './pages/callback/callback.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
 
+import { ParticipantComponent } from './pages/participants/participant/participant.component';
+
 
 const routes: Routes = [
   {
@@ -14,6 +16,11 @@ const routes: Routes = [
   {
     path: 'callback',
     component: CallbackComponent
+  }, 
+  { 
+    path: 'participant', 
+    children: [{ path: ':id', component: ParticipantComponent}]
+    
   }
 ];
 

@@ -1,3 +1,49 @@
-<p>
-  participant works!
-</p>
+<!-- src/app/pages/event/event.component.html -->
+
+
+<ng-template [ngIf]="utils.isLoaded(loading)">
+  <h1 class="text-center">{{ pageTitle }}</h1>
+  <!-- Event -->
+  <ng-template [ngIf]="participant">
+    <div class="card">
+      <!-- Event tab navigation -->
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="[]"
+              [queryParams]="{ tab: 'details' }"
+              [ngClass]="{ 'active': utils.tabIs(tab, 'details') }">Details</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="[]"
+              [queryParams]="{ tab: 'picks' }"
+              [ngClass]="{ 'active': utils.tabIs(tab, 'picks') }">Picks</a>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="utils.tabIs(tab, 'details')">
+        {{participant | json}}
+        {{participant.nickname}}
+      </div>
+      
+<!--       <app-golfer-detail
+        *ngIf="utils.tabIs(tab, 'details')"
+        [team]="team"></app-golfer-detail> -->
+
+
+      
+      
+    </div>
+  </ng-template>
+
+  <!-- Error loading events -->
+  <p *ngIf="error" class="alert alert-danger">
+    <strong>Oops!</strong> There was an error retrieving information for this entry.
+  </p>
+</ng-template>
+
+
