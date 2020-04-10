@@ -19,7 +19,7 @@
     "@ngtools/webpack": "^8.3.16",
     "ajv": "^6.10.2",
     "ajv-keywords": "^3.4.1",
-    "auth0-js": "^9.11.3",
+    "auth0-js": "^9.13.2",
     "body-parser": "^1.19.0",
     "core-js": "^2.6.10",
     "cors": "^2.8.5",
